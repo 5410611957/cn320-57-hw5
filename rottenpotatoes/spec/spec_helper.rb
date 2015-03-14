@@ -1,3 +1,7 @@
+#Thotsawat Fukiatisut  5410611957
+#Supanut Supamitgijja  5410610728
+
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'simplecov'
 SimpleCov.start 'rails'

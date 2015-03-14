@@ -5771,3 +5771,47 @@ Connecting to database specified by database.yml
   [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36m (10.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150314083536')[0m
   [1m[35m (11.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (9.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20111119180638)
+Migrating to AddDirectorToMovie (20150314083536)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/" for 171.96.245.133 at 2015-03-14 17:54:01 +0000
+Connecting to database specified by database.yml
+
+
+Started GET "/movies" for 171.96.245.133 at 2015-03-14 17:54:03 +0000
+Processing by MoviesController#index as HTML
+Redirected to https://cn320-5410610728-kksupanut.c9.io/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1.6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 171.96.245.133 at 2015-03-14 17:54:03 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (88.7ms)
+Compiled application.css  (0ms)  (pid 19652)
+Compiled jquery.js  (1ms)  (pid 19652)
+Compiled jquery_ujs.js  (0ms)  (pid 19652)
+Compiled application.js  (25ms)  (pid 19652)
+Completed 200 OK in 487.6ms (Views: 346.3ms | ActiveRecord: 48.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 171.96.245.133 at 2015-03-14 17:54:04 +0000
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 171.96.245.133 at 2015-03-14 17:54:04 +0000
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 171.96.245.133 at 2015-03-14 17:54:04 +0000
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 171.96.245.133 at 2015-03-14 17:54:04 +0000
+Served asset /application.js - 200 OK (5ms)
