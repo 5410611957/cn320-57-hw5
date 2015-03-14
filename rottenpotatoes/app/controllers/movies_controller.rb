@@ -1,4 +1,17 @@
+#Thotsawat Fukiatisut  5410611957
+#Supanut Supamitgijja  5410610728
+
 class MoviesController < ApplicationController
+  def same_director #add same_director action
+    @movie = Movie.find params[:id]
+    if @movie.director && !@movie.director.empty?
+      @movies = Movie.find_all_by_director(@movie.director)
+    else
+      flash[:notice] = "'#{@movie.title}' has no director edited."
+      redirect_to movies_path
+    end
+  end
+ 
 
   def show
     id = params[:id] # retrieve movie ID from URI route

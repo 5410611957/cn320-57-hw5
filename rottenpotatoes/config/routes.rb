@@ -1,4 +1,14 @@
+#Thotsawat Fukiatisut  5410611957
+#Supanut Supamitgijja  5410610728
+
+
+
 Rottenpotatoes::Application.routes.draw do
+  
+  
+  match 'movies/same_director/:id' => 'movies#same_director', :as => :same_director
+  resources :movies
+  root :to => redirect('/movies')
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,8 +22,7 @@ Rottenpotatoes::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :movies
-
+ 
   # Sample resource route with options:
   #   resources :products do
   #     member do

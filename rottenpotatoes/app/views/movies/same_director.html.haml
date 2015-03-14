@@ -2,17 +2,9 @@
 //Supanut Supamitgijja  5410610728
 
 
--#  This file is app/views/movies/index.html.haml
-%h1 All Movies
+%h1 Movies with the same director as #{@movie.title}
 
-= form_tag movies_path, :method => :get, :id => 'ratings_form' do
-  = hidden_field_tag "title_sort", true if @title_header
-  = hidden_field_tag ":release_date_sort", true if @date_header
-  Include: 
-  - @all_ratings.each do |rating|
-    = rating
-    = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
-  = submit_tag 'Refresh', :id => 'ratings_submit'
+
 
 %table#movies
   %thead
@@ -33,3 +25,5 @@
         %td= link_to "More about #{movie.title}", movie_path(movie)
 
 = link_to 'Add new movie', new_movie_path
+= link_to 'Back to movie list', movies_path
+//////////////////////////////////////////////////////////

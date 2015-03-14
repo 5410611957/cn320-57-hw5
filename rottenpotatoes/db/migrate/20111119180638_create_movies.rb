@@ -10,6 +10,8 @@ class CreateMovies < ActiveRecord::Migration
       t.timestamps
     end
   end
+  
+  def 
 
   def down
     drop_table :movies
